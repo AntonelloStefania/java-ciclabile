@@ -9,7 +9,10 @@ public class Ciclable {
 		setIndiceInt(indiceInt);
 	}
 	
-	public Ciclable() {};
+	public Ciclable() {
+		setElencoInt(elencoInt);
+		setIndiceInt(indiceInt);
+	};
 	
 	public int[] getElencoInt() {
 		return elencoInt;
@@ -35,6 +38,14 @@ public class Ciclable {
 	
 	public boolean hasAncoraElementi() {
 		return getIndiceInt()< getElencoInt().length;
+	}
+	
+	
+	public int[] addElemento(int elem) {
+		int[] nuovoElenco =new int[getElencoInt().length +1];
+		System.arraycopy(getElencoInt(), 0, nuovoElenco, 0, getElencoInt().length);
+		nuovoElenco[getElencoInt().length] = elem;
+		return elencoInt = nuovoElenco;
 	}
 	
 	
